@@ -74,16 +74,9 @@ torneo/
 Este proyecto fue revisado y ajustado respecto a la versión original. Resumen de los cambios:
 
 ### Seguridad
-- **`SECRET_KEY`, `DEBUG` y `ALLOWED_HOSTS`** ya no están escritos directamente en `settings.py`: ahora se leen desde variables de entorno (`.env`) usando `python-decouple`. Esto evita exponer la clave secreta en el repositorio y permite tener configuraciones distintas para desarrollo y producción.
+- **`SECRET_KEY`, `DEBUG` y `ALLOWED_HOSTS`** desde variables de entorno (`.env`) usando `python-decouple`. Esto evita exponer la clave secreta en el repositorio y permite tener configuraciones distintas para desarrollo y producción.
 - Se añadió `.env.example` como plantilla (sin datos sensibles) y `.env` quedó excluido en `.gitignore`.
 
-### Control de versiones
-- `db.sqlite3` ya no se distribuye ni se versiona: cada entorno genera su propia base de datos local con `migrate`.
-- Se corrigió `.gitignore` para excluir `__pycache__/`, `*.pyc`, `venv/`, `.env`, `db.sqlite3`, `staticfiles/`, `media/` y carpetas de IDE (`.idea/`, `.vscode/`).
-- Si vas a subir este proyecto a un repositorio que ya tenía la base de datos o el caché versionados, recuerda quitarlos del índice de git antes de tu primer commit limpio:
-  ```bash
-  git rm -r --cached db.sqlite3 __pycache__
-  ```
 
 ### Corrección de errores
 - **Bug en `perfil.html`**: la plantilla comparaba el objeto `estadistica` directamente contra el texto `'kills'` (`{% if estadistica == 'kills' %}`), lo cual nunca era verdadero. Como resultado, el número de *kills* nunca se mostraba en el perfil de los jugadores de juegos tipo *shooter*. Se corrigió comparando el tipo de ranking real del juego (`user.juego.tipo_ranking == 'kills'`) y se añadió un mensaje para cuando el usuario todavía no tiene estadísticas registradas.
