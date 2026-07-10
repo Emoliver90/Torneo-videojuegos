@@ -1,0 +1,142 @@
+
+.titulo{
+  color: darkgoldenrod !important;
+  background-color: transparent !important;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  transition: 0.3s;
+}
+.titulo:hover{
+    background-color: transparent !important; /* más visible al hover */
+    color: #fff;
+    transform: scale(1.05); /* leve aumento */
+    box-shadow: 0 0 15px darkred !important;
+}
+/*configuracion de card o button si es el caso */
+.card {
+    background-color: transparent!important;
+    border: 2px solid transparent !important; /* borde*/
+    color: black !important;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    transition: 0.3s;
+}
+.card:hover {
+    background-color: transparent !important; /*  hover */
+    color: #fff;
+    transform: scale(1.05); /* leve aumento */
+    box-shadow: 0 0 15px transparent !important;
+}
+/* Configuracion de la imagen de fondo */
+
+.home-page {
+    font-family: "Oswald", sans-serif;
+    background-image: url("imagen/fondo3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: firebrick;
+}
+.registro-page {
+    font-family: "Oswald", sans-serif;
+    background-image: url("imagen/mario2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+.login-page {
+    font-family: "Oswald", sans-serif;
+    background-image: url("imagen/fondo4.jpg") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: firebrick;
+}
+.perfil-page{
+    font-family: "Oswald", sans-serif;
+    background-image: url("imagen/fondo8.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: firebrick;
+}
+/* configuracion del texto en login.html */
+.login{
+    font-family: "Oswald", sans-serif;
+    color: white;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+}
+.estadistica-page{
+    font-family: "Oswald", sans-serif;
+    background-image: url("imagen/futbol1.jpg") !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: firebrick;
+}
+/* configuracion del texto "volver al inicio" en estadisticas */
+.return{
+    color: white !important;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    background-color: transparent;
+}
+/* configuracion del grafico */
+.ranking-container{
+    display:flex;
+    align-items:center;   /* centra verticalmente */
+    gap:40px; /* añade espacio entre items */
+    justify-content: center;
+}
+.chart-container{
+    flex:1;
+    display: flex;
+    min-width:300px;
+    max-width:500px;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    color: white !important;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    justify-content: center;
+}
+.tabla{
+    flex:1;
+    min-width: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+/* color de lineas de tabla */
+.tabla table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tabla th,
+.tabla td {
+    border: 2px solid black; /* líneas negras */
+    padding: 8px;
+    text-align: center;
+}

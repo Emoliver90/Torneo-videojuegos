@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Torneo de VideoJuegos</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+          integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+          crossorigin="anonymous">
+    <!-- Css-->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <main class ="container p-4">
+        <h1 class ="display-4  text-center mt-4 titulo">BIENVENIDOS AL TORNEO DE VIDEOJUEGOS
+        </h1>
+<div class="row justify-content-center">
+    <div class="col-md-3  my-auto">
+        <div class="card mb-3" >
+            <div class="card-header">
+                <a href="{% url 'registro' %}" class="card">
+                    Registrarse
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3  my-auto">
+        <div class="card mb-3" >
+            <div class="card-header">
+                <a href="{% url 'login' %}" class="card">
+                Ingresar
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3  my-auto">
+        <div class="card mb-3" >
+            <div class="card-header">
+                <a href="{% url 'estadisticas' %}" class="card">
+                    Ranking
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+</body>
+</html>

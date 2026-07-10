@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+          integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+          crossorigin="anonymous">
+<!-- css -->
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+<!-- Fuente Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body class="registro-page">
+  <main class ="container p-4 bold text-white">
+    <h2 class="display-4">Registro
+    </h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+      <button type="submit">Registrarse</button>
+    </form>
+  </main>
+</body>
+</html>

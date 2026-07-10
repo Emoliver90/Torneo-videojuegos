@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi perfil</title>
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css"
+            integrity="sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG"
+            crossorigin="anonymous">
+<!-- css -->
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+<!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body class="perfil-page">
+    <main class="container p-4 text-white text-center">
+        <h2 style="color: whitesmoke;
+        font-weight: bolder;
+        font-style: normal;
+        font-family: 'Oswald', sans-serif;
+        font-optical-sizing: auto;
+        text-align: center">Perfil de Usuario</h2>
+        <p>Usuario: {{ user.username }}</p>
+        <p>Nombre y Apellido: {{ user.first_name }} {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Juego: {{ user.juego.nombre }}</p>
+        <p>Nivel: {{ user.get_nivel_display }}</p>
+        {% if not estadistica %}
+            <p>Todavía no tienes estadísticas registradas para este juego.</p>
+        {% elif user.juego.tipo_ranking == 'kills' %}
+            <p>Kills: {{ estadistica.kills }}</p>
+        {% else %}
+            <p>Partidos Ganados: {{ estadistica.partidos_ganados }}</p>
+            <p>Goles: {{ estadistica.goles }}</p>
+        {% endif %}
+        <a style="color: white" href="{% url 'index' %}">Cerrar sesión</a>
+    </main>
+</body>
+</html>
